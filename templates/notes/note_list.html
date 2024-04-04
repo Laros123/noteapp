@@ -1,4 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
-<p>note list</p>
+{% for note in notes %}
+<a href="{% url 'note-detail' note.id %}">{{note.id}}</a>
+<p>Назва {{note.title}}</p>
+<p>{{note.content}}</p>
+<br>
+{% endfor %}
 {% endblock %}
